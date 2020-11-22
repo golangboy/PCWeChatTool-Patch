@@ -3,9 +3,14 @@
 
 # 组成
 #### WeChatSetup2.6.8.52 版本(https://pan.baidu.com/s/1-8gR9NCxE4u4ArWU6DvPPg  提取码：yhec )
-#### Tool.dll 负责底层HOOK(https://github.com/blacknight2018/WeToolelDll) ***Visual Studio***
-#### Patch.dll 负责提供HTTP接口和Tool.dll通信 (本源码编译的Dll) **Cgo**
+#### Tool.dll 负责底层HOOK
+#### Patch.dll 负责提供HTTP接口和Tool.dll通信
 
+## Patch.dll
+#### 你可以通过git本仓库代码运行build.cmd编译出Patch.dll 或者 下载我已经编译后的out\Patch.dll文件
+
+## Tool.dll
+#### 你可以通过使用Visual Studio 编译其源码(https://github.com/blacknight2018/WeToolelDll)得到
 
 # 目前支持的功能
 #### 发送文本消息
