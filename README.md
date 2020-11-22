@@ -10,7 +10,7 @@
 #### 你可以通过git本仓库代码运行build.cmd编译出Patch.dll 或者 下载我已经编译后的out\Patch.dll文件
 
 ## Tool.dll
-#### 你可以通过使用Visual Studio 编译其源码(https://github.com/blacknight2018/WeToolelDll)得到
+#### 你可以通过使用Visual Studio 编译其源码 https://github.com/blacknight2018/WeToolelDll 得到
 
 # 目前支持的功能
 #### 发送文本消息
