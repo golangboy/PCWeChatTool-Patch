@@ -23,7 +23,7 @@
 #### 运行WeChat2.exe,如果没问题你会看到如下消息
 ![avatar](https://github.com/blacknight2018/WeChatToolerFrameWork/blob/master/Images/Img1.jpg)
 
-# 你需要提供以下HTTP接口
+# 你需要提供以下HTTP接口接收消息
 
 ### http://localhost:19730/msg
 > 接收消息,包含所有类型
