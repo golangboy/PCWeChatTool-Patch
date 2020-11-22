@@ -125,7 +125,7 @@ func main() {
 }
 
 /**
- * @Description: 用于WeChat.exe添加的导入函
+ * @Description: 用于WeChat.exe添加的导入函数
  */
 //export Enter
 func Enter() {

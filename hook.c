@@ -129,5 +129,7 @@ void StartHook()
 		{
 			addr(voiceMessage);
 		}
-	}
+	}else{
+          	MessageBoxA(0,"Tool.dll Load Failed","错误",MB_OK);
+        }
 }
