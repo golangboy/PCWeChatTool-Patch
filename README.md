@@ -21,4 +21,98 @@
 #### 下载修改过后的微信主程序WeChat2.exe https://github.com/blacknight2018/WeChatControlPC/blob/master/WeChat2.exe
 #### 将Patch.dll和Tool.dll以及2中下载的修改过后的微信主程序WeChat2.exe覆盖到你的微信主目录
 #### 运行WeChat2.exe,如果没问题你会看到如下消息
- 
+![avatar](https://github.com/blacknight2018/WeChatToolerFrameWork/blob/master/Images/Img1.jpg)
+
+# 你需要提供以下HTTP接口
+
+### http://localhost:19730/msg
+> 接收消息,包含所有类型
+
+###### 参数格式
+> JSON
+
+###### HTTP接口方式
+> POST
+
+###### 接收参数
+``` 
+{
+    "wx_id": "wxid_xxxxxxx",  发送者,可以是公众号、群、私人
+    "msg": "yyyyyy",           
+    "type": "1",              当type = 1时 一定是文本消息,否则是一个XML结构。
+}
+```
+
+
+### http://localhost:19730/img
+> 接收图片消息
+
+###### 参数格式
+> JSON
+
+###### HTTP接口方式
+> POST
+
+###### 接收参数
+``` 
+{
+    "wx_id": "wxid_xxxxxxx",           发送者,可以是群、私人
+    "img_local_abs_path": "c:/xxxxx",  图片的本地绝对路径          
+}
+```
+
+
+
+### http://localhost:19730/voice
+> 接收语音消息
+
+###### 参数格式
+> JSON
+
+###### HTTP接口方式
+> POST
+
+###### 接收参数
+``` 
+{
+    "wx_id": "wxid_xxxxxxx",           发送者,可以是群、私人
+    "voice_data": "yyyyyyyyyyyyyyyy",  SKLI格式的音频数据,以BASE64编码返回,关于SKLI的解码和编码GitHub上有开源代码     
+}
+```
+
+
+# 你通过以下接口发送消息
+
+### http://localhost:8888/text
+> 发送文本消息
+
+###### 参数格式
+> JSON
+
+###### HTTP接口方式
+> POST
+
+###### 接收参数
+``` 
+{
+    "wx_id": "wxid_xxxxxxx",           发送者,可以是群(@chatrom)
+    "text": "yyyyyyyyyyyyyyyy",        文本消息
+}
+```
+
+### http://localhost:8888/file
+> 发送文件(目前暂时支支持图片格式)
+
+###### 参数格式
+> JSON
+
+###### HTTP接口方式
+> POST
+
+###### 接收参数
+``` 
+{
+    "wx_id": "wxid_xxxxxxx",           发送者,可以是群(@chatrom)
+    "path": "yyyyyyyyyyyyyyyy",        文件所在的本地绝对路径
+}
+```
