@@ -1,3 +1,4 @@
+cls
 del out
 set GOOS=windows
 set GOARCH=386

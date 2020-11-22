@@ -8,8 +8,14 @@ package main
 import "C"
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
+	"github.com/zyx4843/gojson"
+	"strconv"
 	"unsafe"
 )
+
+const defaultPostServer = "http://localhost:19730"
+const defaultBindPort = 8888
 
 /**
  * @Description:  当接收到消息时(包括所有文字、语音、群、等其他消息)
@@ -21,8 +27,11 @@ import (
 func recvMsg(wxId string, wxMsg string, msgType int) {
 	wxMsg = gbkToUtf8(wxMsg)
 	wxId = gbkToUtf8(wxId)
-	msgT := msgType
-	fmt.Println(wxMsg, msgT)
+	httpPost(defaultPostServer+"/msg", struct {
+		WxId string `json:"wx_id"`
+		Msg  string `json:"msg"`
+		Type int    `json:"type"`
+	}{wxId, wxMsg, msgType})
 }
 
 /**
@@ -34,7 +43,10 @@ func recvMsg(wxId string, wxMsg string, msgType int) {
 func recvImageMsg(wxId string, imgPath string) {
 	imgPath = gbkToUtf8(imgPath)
 	wxId = gbkToUtf8(wxId)
-	fmt.Println(imgPath, wxId)
+	httpPost(defaultPostServer+"/img", struct {
+		WxId            string `json:"wx_id"`
+		ImgLocalAbsPath string `json:"img_local_abs_path"`
+	}{wxId, imgPath})
 }
 
 /**
@@ -46,10 +58,53 @@ func recvImageMsg(wxId string, imgPath string) {
 //export recvVoiceMsg
 func recvVoiceMsg(wxId string, ptrVoiceData unsafe.Pointer, dataLen int) {
 	wxId = gbkToUtf8(wxId)
-	voiceLen := dataLen
 	voiceBuff := make([]byte, dataLen)
 	C.memcpy(unsafe.Pointer(&voiceBuff[0]), ptrVoiceData, C.uint(dataLen))
-	fmt.Println(voiceLen)
+
+	httpPost(defaultPostServer+"/voice", struct {
+		WxId      string `json:"wx_id"`
+		VoiceData string `json:"voice_data"`
+	}{wxId, getBase64(voiceBuff)})
+}
+
+/**
+ * @Description: 启动本地HTTP服务提供接口
+ */
+func startSendMsgServer() {
+	g := gin.Default()
+	g.Handle("POST", "text", func(context *gin.Context) {
+		if bs, err := context.GetRawData(); err == nil {
+			jsonData := string(bs)
+			wxId := gojson.Json(jsonData).Get("wx_id").Tostring()
+			textMsg := gojson.Json(jsonData).Get("text").Tostring()
+			fmt.Println(wxId, textMsg)
+
+			if len(wxId) > 0 && len(textMsg) > 0 {
+				CSwxId := C.CString(utf8ToGbk(wxId))
+				CSMsg := C.CString(utf8ToGbk(textMsg))
+				C.SendTextMessage(CSwxId, CSMsg)
+				defer C.free(unsafe.Pointer(CSwxId))
+				defer C.free(unsafe.Pointer(CSMsg))
+			}
+		}
+	})
+	g.Handle("POST", "file", func(context *gin.Context) {
+		if bs, err := context.GetRawData(); err == nil {
+			jsonData := string(bs)
+			wxId := gojson.Json(jsonData).Get("wx_id").Tostring()
+			filePath := gojson.Json(jsonData).Get("path").Tostring()
+			if len(wxId) > 0 && len(filePath) > 0 {
+				CSwxId := C.CString(utf8ToGbk(wxId))
+				CSPath := C.CString(utf8ToGbk(filePath))
+
+				C.SendFileMessage(CSwxId, CSPath)
+
+				defer C.free(unsafe.Pointer(CSwxId))
+				defer C.free(unsafe.Pointer(CSPath))
+			}
+		}
+	})
+	g.Run(":" + strconv.Itoa(defaultBindPort))
 }
 
 /**
@@ -57,19 +112,9 @@ func recvVoiceMsg(wxId string, ptrVoiceData unsafe.Pointer, dataLen int) {
  */
 func init() {
 	C.StartHook()
-	//go func() {
-	//	g := gin.Default()
-	//	g.Handle("GET", "/text", func(context *gin.Context) {
-	//		context.Writer.WriteString(wxid + " " + txt + " " + strconv.Itoa(msgT))
-	//	})
-	//	g.Handle("GET", "/img", func(context *gin.Context) {
-	//		context.Writer.WriteString(wxid + " " + img)
-	//	})
-	//	g.Handle("GET", "/voice", func(context *gin.Context) {
-	//		context.Writer.Write(voiceBuff)
-	//	})
-	//	g.Run(":8080")
-	//}()
+	go func() {
+		startSendMsgServer()
+	}()
 }
 
 /**
