@@ -2,9 +2,9 @@
 一个基于WeChat的自动收发框架
 
 # 组成
-#### WeChatSetup2.6.8.52 版本
-#### Tool.dll 负责底层HOOK
-#### Patch.dll 负责提供HTTP接口和Tool.dll通信
+#### WeChatSetup2.6.8.52 版本(https://pan.baidu.com/s/1-8gR9NCxE4u4ArWU6DvPPg  提取码：yhec )
+#### Tool.dll 负责底层HOOK(https://github.com/blacknight2018/WeToolelDll) ***Visual Studio***
+#### Patch.dll 负责提供HTTP接口和Tool.dll通信 (本源码编译的Dll) **Cgo**
 
 
 # 目前支持的功能
@@ -17,7 +17,7 @@
 
 
 # 使用方法
-#### 下载对应版本的微信安装程序链接：https://pan.baidu.com/s/1-8gR9NCxE4u4ArWU6DvPPg  提取码：yhec 
+#### 下载WeChatSetup2.6.8.52 版本的微信安装程序
 #### 下载修改过后的微信主程序WeChat2.exe https://github.com/blacknight2018/WeChatControlPC/blob/master/WeChat2.exe
 #### 将Patch.dll和Tool.dll以及2中下载的修改过后的微信主程序WeChat2.exe覆盖到你的微信主目录
 #### 运行WeChat2.exe,如果没问题你会看到如下消息
