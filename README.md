@@ -1,4 +1,4 @@
-# WeChatToolerFrameWork
+# WeChatTooler
 一个基于WeChat的自动收发框架
 
 # 组成
