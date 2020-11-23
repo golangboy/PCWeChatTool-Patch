@@ -26,7 +26,7 @@
 #### 2.下载修改过后的微信主程序WeChat2.exe https://github.com/blacknight2018/WeChatControlPC/blob/master/WeChat2.exe
 #### 3.将Patch.dll和Tool.dll以及2中下载的修改过后的微信主程序WeChat2.exe覆盖到你的微信主目录
 #### 4.运行WeChat2.exe,如果没问题你会看到如下消息
-![avatar](https://github.com/blacknight2018/WeChatToolerFrameWork/blob/master/Images/Img1.jpg)
+![img](https://github.com/blacknight2018/WeChatToolerFrameWork/blob/master/Images/Img1.jpg)
 
 # 你需要提供以下HTTP接口接收消息
 
