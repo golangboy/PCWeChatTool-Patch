@@ -44,7 +44,7 @@
 {
     "wx_id": "wxid_xxxxxxx",  发送者,可以是公众号、群、私人
     "msg": "yyyyyy",           
-    "type": "1",              当type = 1时 一定是文本消息,否则是一个XML结构。
+    "type": "1",              当type = 1时 文本消息  type = 10000时 系统消息
 }
 ```
 
