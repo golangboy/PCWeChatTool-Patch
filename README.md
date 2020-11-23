@@ -48,6 +48,8 @@
 }
 ```
 
+![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img2.jpg)
+
 
 ### http://localhost:19730/img
 > 接收图片消息
