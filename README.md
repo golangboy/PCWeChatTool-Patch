@@ -39,6 +39,9 @@
 ###### HTTP接口方式
 > POST
 
+###### 注意
+> 如果是手机端同步过来的消息wx_id无法区分
+
 ###### 接收参数
 ``` 
 {
@@ -48,13 +51,13 @@
 }
 ```
 ###### 结果示例
-> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img2.jpg)  
+> ![img](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img2.jpg)  
 
-> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img3.jpg)  
+> ![img](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img3.jpg)  
 
-> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img4.jpg)  
+> ![img](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img4.jpg)  
 
-> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img5.jpg)  
+> ![img](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img5.jpg)  
 
   
 
@@ -75,7 +78,7 @@
 }
 ```
 ###### 结果示例
-> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img6.jpg)
+> ![img](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img6.jpg)
  
 
 
@@ -96,7 +99,7 @@
 }
 ```
 ###### 结果示例
-> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img7.jpg)
+> ![img](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img7.jpg)
  
  
 
