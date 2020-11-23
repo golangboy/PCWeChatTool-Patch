@@ -1,5 +1,5 @@
 # PCWeChatTooler
-一个基于WeChat的自动收发框架
+一个基于WeChat的提供HTTP API的框架
 
 # 组成
 #### WeChatSetup2.6.8.52 版本(https://pan.baidu.com/s/1-8gR9NCxE4u4ArWU6DvPPg  提取码：yhec )
