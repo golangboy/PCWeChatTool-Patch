@@ -49,6 +49,11 @@
 ```
 
 ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img2.jpg)
+![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img3.jpg)
+
+
+
+
 
 
 ### http://localhost:19730/img
