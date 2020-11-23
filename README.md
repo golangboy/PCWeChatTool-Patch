@@ -47,14 +47,14 @@
     "type": "1",              当type = 1时 文本消息  type = 10000时 系统消息
 }
 ```
+###### 结果示例
+> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img2.jpg)  
 
-![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img2.jpg)  
+> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img3.jpg)  
 
-![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img3.jpg)  
+> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img4.jpg)  
 
-![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img4.jpg)  
-
-![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img5.jpg)  
+> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img5.jpg)  
 
   
 
@@ -74,8 +74,8 @@
     "img_local_abs_path": "c:/xxxxx",  图片的本地绝对路径          
 }
 ```
- 
-![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img6.jpg)
+###### 结果示例
+> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img6.jpg)
  
 
 
@@ -95,8 +95,8 @@
     "voice_data": "yyyyyyyyyyyyyyyy",  SKLI格式的音频数据,以BASE64编码返回,关于SKLI的解码和编码GitHub上有开源代码     
 }
 ```
- 
-![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img7.jpg)
+###### 结果示例
+> ![avatar](https://github.com/blacknight2018/PCWeChatTool-Patch/blob/master/Images/Img7.jpg)
  
  
 
